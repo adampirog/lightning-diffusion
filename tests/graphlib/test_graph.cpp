@@ -1,8 +1,11 @@
 #include "../../graphlib/graph.hpp"
 #include <catch2/catch_test_macros.hpp>
+#include <string>
 
-TEST_CASE("Factorials are computed", "[graph]") {
+const std::string RESOURCE_PATH = "../tests/graphlib/resources/";
 
-  Graph graph = Graph("First graph.");
-  REQUIRE(graph.get_name() == "First graph.");
+TEST_CASE("Creating a graph", "[graph]") {
+
+  Graph graph = Graph(RESOURCE_PATH + "test_graph.adjlist");
+  REQUIRE(graph.get_nodes() == 5);
 }

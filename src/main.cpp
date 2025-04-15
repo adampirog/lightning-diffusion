@@ -1,10 +1,10 @@
-#include <iostream>
-
 #include "../graphlib/graph.hpp"
+#include "../lightning-diffusion/utils/rng.hpp"
+#include "../lightning-diffusion/utils/timer.hpp"
+#include "cli/argument_parser.hpp"
 
-int main() {
+int main(int argc, char* argv[]) {
+  auto parser = ArgumentParser(argc, argv);
 
-  std::cout << "Hello World!\n";
-  Graph graph = Graph("First graph.");
-  std::cout << "Graph created: " << graph.get_name() << "\n";
+  auto graph = Graph(parser.get_graph());
 }
